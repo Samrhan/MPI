@@ -30,23 +30,25 @@ private:
     int alphabet_size;
     char *alphabet; // Alphabet
     bool synchronous;
-    bool determined;
+    bool determinized;
     bool complete;
     bool minimized;
 public:
+    Automate();
     explicit Automate(int number); // Constructeur
+    explicit Automate(vector<state>); // Constructeur à partir d'un vecteur d'état
     Automate(Automate &cp); // Constructeur de copie
 
     friend ostream &operator<<(ostream &os, const Automate &ar); // Affichage par surcharge de l'opérateur <<
+    // Determinisation et complétion
+    friend void determinizationCompletion(Automate &ar);
+    friend Automate determinizationCompletionAsynchronous(Automate &ar);
+    friend Automate completion(Automate &ar);
+    friend Automate determinizationCompletionSynchronous(Automate &ar);
 
     bool isSynchronous();
-
     bool isDeterminized();
-
-    Automate pre_determinization();
-
-    state determinization(vector<state> &similar_state, vector<state> &new_list_state);
-
+    bool isComplete();
 };
 
 

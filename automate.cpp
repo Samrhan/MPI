@@ -1,5 +1,17 @@
 #include "data_structures.h"
 
+
+Automate::Automate() {
+    name = "new Automate";
+    state_number = 0;
+    alphabet_size = 0;
+    alphabet = {};
+    synchronous = false;
+    determinized = false;
+    complete = false;
+    minimized = false;
+}
+
 Automate::Automate(int number) {
     ifstream file("../AF/test" + to_string(number) + ".txt");
     if (!file) {
@@ -63,7 +75,11 @@ Automate::Automate(int number) {
     }
     file.close();
     synchronous = isSynchronous();
-    determined = isDeterminized();
+    determinized = isDeterminized();
+}
+
+Automate::Automate(vector<state>) {
+
 }
 
 Automate::Automate(Automate &cp) {
@@ -74,18 +90,19 @@ Automate::Automate(Automate &cp) {
     for (int i = 0; i < alphabet_size; i++) {
         alphabet[i] = cp.alphabet[i];
     }
-
+    int k = 0;
     for (auto &i : cp.state_list) {
-        state tmp;
-        tmp.terminal = i.terminal;
-        tmp.initial = i.initial;
-        state_list.push_back(tmp);
+        state tmp_state;
+        tmp_state.terminal = i.terminal;
+        tmp_state.initial = i.initial;
+        state_list.push_back(tmp_state);
         for (auto &j : i.transition_list) {
-            transition tmp;
-            tmp.character = j.character;
-            tmp.state = j.state;
-            state_list[i].transition_list.push_back(tmp);
+            transition tmp_transition;
+            tmp_transition.character = j.character;
+            tmp_transition.state = j.state;
+            state_list[k].transition_list.push_back(tmp_transition);
         }
+        k++;
     }
 }
 
@@ -113,7 +130,7 @@ ostream &operator<<(ostream &os, const Automate &af) {
             os << "   - est synchrone" << endl;
         else
             os << "   - est asynchrone" << endl;
-        if (af.determined)
+        if (af.determinized)
             os << "   - est deterministe" << endl;
         else
             os << "   - est non deterministe" << endl;
@@ -154,28 +171,23 @@ bool Automate::isDeterminized() {
     return true;
 }
 
-Automate Automate::pre_determinization() {
-    vector<state> similar_state;
-    vector<state> new_list_state;
-    for (auto &i : state_list)
-        if (i.initial)
-            similar_state.push_back(i);
-    determinization(similar_state, new_list_state);
-    Automate new_automate(1);
-    return new_automate;
-}
-
-state Automate::determinization(vector<state> &similar_states, vector<state> &new_list_state) {
-    if (!synchronous) {
-        for (auto &i :state_list) {
-            for (auto &j : i.transition_list) {
-                if (j.character == '*') {
-                    similar_states.push_back(state_list[j.state]);
+bool Automate::isComplete() {
+    bool in = false;
+    for(auto &i : state_list){
+        if (i.transition_list.size() < alphabet_size){
+            return false;
+        }
+        for(int j = 0; j < alphabet_size; j++){
+            for(auto &k : i.transition_list){
+                if(alphabet[j] == k.character){
+                    in = true;
                 }
             }
+            if (!in)
+                return false;
+            in = false;
         }
     }
-    state new_state;
-    return new_state;
-
+    return false;
 }
+
