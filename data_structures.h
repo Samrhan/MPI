@@ -9,17 +9,20 @@
 
 using namespace std;
 
-typedef struct transition {
-    char character;
-    int state;
-} transition;
+typedef struct transition transition;
+typedef struct state state;
 
-typedef struct state {
+struct transition {
+    char character;
+    state* dest_state;
+};
+
+struct state {
     vector<transition> transition_list;
     int id;
     bool initial;
     bool terminal;
-} state;
+};
 
 class Automate {
 private:
@@ -35,6 +38,7 @@ private:
     bool minimized;
 public:
     Automate();
+
     explicit Automate(int number); // Constructeur
     explicit Automate(vector<state>); // Constructeur à partir d'un vecteur d'état
     Automate(Automate &cp); // Constructeur de copie
@@ -42,12 +46,17 @@ public:
     friend ostream &operator<<(ostream &os, const Automate &ar); // Affichage par surcharge de l'opérateur <<
     // Determinisation et complétion
     friend void determinizationCompletion(Automate &ar);
+
     friend Automate determinizationCompletionAsynchronous(Automate &ar);
+
     friend Automate completion(Automate &ar);
+
     friend Automate determinizationCompletionSynchronous(Automate &ar);
 
     bool isSynchronous();
+
     bool isDeterminized();
+
     bool isComplete();
 };
 
