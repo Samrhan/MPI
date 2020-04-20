@@ -158,6 +158,7 @@ bool Automate::isDeterminized() {
             number_initial++;
         if (number_initial > 1)
             return false;
+        tmp = i.transition_list[0].character;
         for (auto &j : i.transition_list) {
             if (j.character != tmp) {
                 number_char = 0;
