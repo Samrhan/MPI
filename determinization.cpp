@@ -36,7 +36,7 @@ Automate completion(Automate &ar) {
     state trash;
     trash.terminal = false;
     trash.initial = false;
-    trash.id = -1;
+    trash.id = "-1";
     for (int i = 0; i < ar2.alphabet_size - 1; i++) {
         transition tmp;
         tmp.dest_state = &trash;
@@ -86,10 +86,10 @@ Automate determinizationCompletionSynchronous(Automate &ar) {
         state newentry;
         newentry.terminal = false;
         newentry.initial = true;
-        newentry.id = -2;
+        newentry.id = "-2";
 
         for (auto &i : ar2.state_list) {
-            if (i.initial && i.id != -2) {
+            if (i.initial && i.id != "-2") {
                 i.initial = false;
                 for (auto &k : i.transition_list) {
                     transition tmp;
@@ -113,7 +113,7 @@ Automate determinizationCompletionSynchronous(Automate &ar) {
 
     char tmp;
     int tmp2;
-    int tmp3;
+    string tmp3;
     test = false;
     transition tmp4;
     for (auto &i : ar2.state_list) {
@@ -124,7 +124,7 @@ Automate determinizationCompletionSynchronous(Automate &ar) {
                     state newstate;
                     newstate.terminal = false;
                     newstate.initial = false;
-                    newstate.id = 10 * tmp3 + k.dest_state->id;
+                    newstate.id = to_string(10 * stoi(tmp3) + stoi(k.dest_state->id));
                     cout << "ca marchote" << endl;
                     cout << k.character << endl;
                     cout << i.id << endl;
@@ -169,16 +169,8 @@ Automate complementarization(Automate &ar) {
     ar2 = Automate(ar);
     if(ar.isComplete() && ar.isComplete()){
         for (auto &i : ar2.state_list) {
-            if(i.initial){
-                i.initial=false;
-            }else{
-                i.initial=true;
-            }
-            if(i.terminal){
-                i.terminal=false;
-            }else{
-                i.terminal=true;
-            }
+            i.initial = !i.initial;
+            i.terminal = !i.terminal;
         }
         return ar2;
     }
@@ -192,7 +184,7 @@ Automate standardisation(Automate &ar) {
     state newentry;
     newentry.terminal = false;
     newentry.initial = true;
-    newentry.id = -2;
+    newentry.id = "-2";
     for (auto &i : ar2.state_list) {
         if(i.initial){
             i.initial=false;

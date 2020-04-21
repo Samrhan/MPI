@@ -1,5 +1,20 @@
 #include "data_structures.h"
 
+const vector<string> split(const string &s, const char &c) {
+    string buff{""};
+    vector<string> v;
+
+    for (auto n:s) {
+        if (n != c) buff += n;
+        else if (n == c && buff != "") {
+            v.push_back(buff);
+            buff = "";
+        }
+    }
+    if (buff != "") v.push_back(buff);
+
+    return v;
+}
 
 Automate::Automate() {
     name = "new Automate";
@@ -41,32 +56,53 @@ Automate::Automate(int number) {
                 state_number = stoi(line);
                 for (int i = 0; i < state_number; i++) {
                     state tmp;
-                    tmp.id = i;
+                    tmp.id = to_string(i);
                     state_list.push_back(tmp);
                 }
             }
 
 
             if (n == 3) { // On indique si les états sont initiaux
-                for (int i = 2; i <= line.size(); i += 2) {
-                    state_list[line[i] - 48].initial = true;
+                vector<string> init{split(line, ' ')};
+                for (int i = 1; i < init.size(); i++) {
+                    state_list[stoi(init[i])].initial = true;
                 }
 
             }
             if (n == 4) {
-                for (int i = 2; i <= line.size(); i += 2) {
-                    state_list[line[i] - 48].terminal = true;
+                vector<string> termin{split(line, ' ')};
+                for (int i = 1; i < termin.size(); i++) {
+                    state_list[stoi(termin[i])].terminal = true;
                 }
 
             }
             if (n >= 6) {
                 transition tmp;
-                tmp.character = line[1];
-                tmp.dest_state = &state_list[line[2] - 48];
+                vector<char> transi(line.begin(), line.end());
+                string from_where;
+                char which_id;
+                string to_where;
+                bool passed = false;
+                for (auto &i : transi) {
+                    if (i - 97 < 0) {
+                        if (!passed) {
+                            from_where += i;
+                        } else {
+                            to_where += i;
+                        }
+                    } else {
+                        passed = true;
+                        which_id = i;
+                    }
+                }
+
+
+                tmp.character = which_id;
+                tmp.dest_state = &state_list[stoi(to_where)];
                 if (line[0] - 48 >= state_number)
                     cout << "Il n'y a pas assez d'état pour ces transitions" << endl;
                 else
-                    state_list[line[0] - 48].transition_list.push_back(tmp);
+                    state_list[stoi(from_where)].transition_list.push_back(tmp);
             }
             n++;
 

@@ -19,7 +19,7 @@ struct transition {
 
 struct state {
     vector<transition> transition_list;
-    int id;
+    string id;
     bool initial;
     bool terminal;
 };
