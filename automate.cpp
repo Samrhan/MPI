@@ -62,7 +62,7 @@ Automate::Automate(int number) {
             if (n >= 6) {
                 transition tmp;
                 tmp.character = line[1];
-                tmp.state = line[2] - 48;
+                tmp.dest_state = &state_list[line[2] - 48];
                 if (line[0] - 48 >= state_number)
                     cout << "Il n'y a pas assez d'état pour ces transitions" << endl;
                 else
@@ -95,11 +95,12 @@ Automate::Automate(Automate &cp) {
         state tmp_state;
         tmp_state.terminal = i.terminal;
         tmp_state.initial = i.initial;
+        tmp_state.id = i.id;
         state_list.push_back(tmp_state);
         for (auto &j : i.transition_list) {
             transition tmp_transition;
             tmp_transition.character = j.character;
-            tmp_transition.state = j.state;
+            tmp_transition.dest_state = j.dest_state;
             state_list[k].transition_list.push_back(tmp_transition);
         }
         k++;
@@ -124,18 +125,19 @@ ostream &operator<<(ostream &os, const Automate &af) {
         os << "    - possede " << i.transition_list.size() << " transition(s)" << endl;
         for (auto &j : i.transition_list) {
             os << "une transition " << j.character << " vers l'etat "
-               << j.state << endl;
+               << j.dest_state->id << endl;
         }
-        if (af.synchronous)
-            os << "   - est synchrone" << endl;
-        else
-            os << "   - est asynchrone" << endl;
-        if (af.determinized)
-            os << "   - est deterministe" << endl;
-        else
-            os << "   - est non deterministe" << endl;
         os << endl;
     }
+    if (af.synchronous)
+        os << "   - est synchrone" << endl;
+    else
+        os << "   - est asynchrone" << endl;
+    if (af.determinized)
+        os << "   - est deterministe" << endl;
+    else
+        os << "   - est non deterministe" << endl;
+    os << endl;
     return os;
 }
 
@@ -157,6 +159,7 @@ bool Automate::isDeterminized() {
             number_initial++;
         if (number_initial > 1)
             return false;
+        tmp = i.transition_list[0].character;
         for (auto &j : i.transition_list) {
             if (j.character != tmp) {
                 number_char = 0;
@@ -173,13 +176,13 @@ bool Automate::isDeterminized() {
 
 bool Automate::isComplete() {
     bool in = false;
-    for(auto &i : state_list){
-        if (i.transition_list.size() < alphabet_size){
+    for (auto &i : state_list) {
+        if (i.transition_list.size() < alphabet_size) {
             return false;
         }
-        for(int j = 0; j < alphabet_size; j++){
-            for(auto &k : i.transition_list){
-                if(alphabet[j] == k.character){
+        for (int j = 0; j < alphabet_size; j++) {
+            for (auto &k : i.transition_list) {
+                if (alphabet[j] == k.character) {
                     in = true;
                 }
             }
