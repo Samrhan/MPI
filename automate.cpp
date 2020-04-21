@@ -95,6 +95,7 @@ Automate::Automate(Automate &cp) {
         state tmp_state;
         tmp_state.terminal = i.terminal;
         tmp_state.initial = i.initial;
+        tmp_state.id = i.id;
         state_list.push_back(tmp_state);
         for (auto &j : i.transition_list) {
             transition tmp_transition;
