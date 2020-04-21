@@ -51,6 +51,10 @@ public:
 
     friend Automate completion(Automate &ar);
 
+    friend Automate complementarization(Automate &ar);
+
+    friend Automate standardisation(Automate &ar);
+
     friend Automate determinizationCompletionSynchronous(Automate &ar);
 
     bool isSynchronous();
