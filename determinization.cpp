@@ -36,7 +36,7 @@ Automate completion(Automate &ar) {
     state trash;
     trash.terminal = false;
     trash.initial = false;
-    trash.id = "-1";
+    trash.id = "P";
     for (int i = 0; i < ar2.alphabet_size - 1; i++) {
         transition tmp;
         tmp.dest_state = &trash;
@@ -71,120 +71,11 @@ Automate completion(Automate &ar) {
 Automate determinizationCompletionSynchronous(Automate &ar) {
     Automate ar2;
     ar2 = Automate(ar);
-    int number_initial = 0;
-    bool test = false;
-
-    for (auto &i : ar2.state_list) {
-        if (i.initial)
-            number_initial++;
-        if (number_initial > 1) {
-            test = true;
-            break;
-        }
-    }
-    while (test) {
-        state newentry;
-        newentry.terminal = false;
-        newentry.initial = true;
-        newentry.id = "-2";
-
-        for (auto &i : ar2.state_list) {
-            if (i.initial && i.id != "-2") {
-                i.initial = false;
-                for (auto &k : i.transition_list) {
-                    transition tmp;
-                    tmp.dest_state = k.dest_state;
-                    tmp.character = k.character;
-                    newentry.transition_list.push_back(tmp);
-                }
-            }
-        }
-        ar2.state_list.push_back(newentry);
-        number_initial=0;
-        for (auto &i : ar2.state_list) {
-            if (i.initial)
-                number_initial++;
-            if (number_initial > 1) {
-                test = true;
-                break;
-            }
-        }
-    }
-
-    char tmp;
-    int tmp2;
-    string tmp3;
-    test = false;
-    transition tmp4;
-    for (auto &i : ar2.state_list) {
-        for (auto &k : i.transition_list) {
-            if (k.character == tmp) {
-
-                if(!test){
-                    state newstate;
-                    newstate.terminal = false;
-                    newstate.initial = false;
-                    newstate.id = to_string(10 * stoi(tmp3) + stoi(k.dest_state->id));
-                    cout << "ca marchote" << endl;
-                    cout << k.character << endl;
-                    cout << i.id << endl;
-                    cout << tmp3 << endl;
-                    cout << newstate.id << endl;
-                    cout << "ca marchote" << endl;
-
-                    test=true;
-
-                    transition tmptrans;
-                    tmptrans.dest_state = k.dest_state;
-                    tmptrans.character = k.character;
-                    newstate.transition_list.push_back(tmptrans);
-
-                    transition tmptrans2;
-                    tmptrans2.dest_state = tmp4.dest_state;
-                    tmptrans2.character = tmp4.character;
-                    newstate.transition_list.push_back(tmptrans2);
-                    
-                    ar2.state_list.push_back(newstate);
-
-
-                }
-
-            }
-            else{
-                test = false;
-            }
-            tmp4 = k;
-            tmp = k.character;
-            tmp3 = k.dest_state->id;
-
-        }
-    }
-
-
-    //ar2 = completion(ar2);
-    return ar2;
-}
-Automate complementarization(Automate &ar) {
-    Automate ar2;
-    ar2 = Automate(ar);
-    if(ar.isComplete() && ar.isComplete()){
-        for (auto &i : ar2.state_list) {
-            i.initial = !i.initial;
-            i.terminal = !i.terminal;
-        }
-        return ar2;
-    }
-
-}
-
-Automate standardisation(Automate &ar) {
-    Automate ar2;
-    ar2 = Automate(ar);
 
     state newentry;
     newentry.terminal = false;
     newentry.initial = true;
-    newentry.id = "-2";
+    newentry.id = "I";
     for (auto &i : ar2.state_list) {
         if(i.initial){
             i.initial=false;
@@ -199,7 +90,94 @@ Automate standardisation(Automate &ar) {
             }
         }
 
-        return ar2;
+
     }
     ar2.state_list.push_back(newentry);
+    remake:
+    state tmp;
+    transition tmp2;
+    int a =0;
+    for (auto &i : ar2.state_list) {
+        for (auto &k : i.transition_list) {
+
+            if(k.character==tmp2.character){
+                state newstate;
+
+                newstate.initial = false;
+                newstate.terminal=false;
+                newstate.id = tmp2.dest_state->id + ","+ k.dest_state->id;
+                if(tmp2.dest_state->terminal== true ||  k.dest_state->terminal== true){
+                    newstate.terminal=true;
+                }
+
+
+                for (auto &l : k.dest_state->transition_list) {
+                    transition tmptrans;
+                    tmptrans.dest_state = l.dest_state;
+                    tmptrans.character = l.character;
+                    newstate.transition_list.push_back(tmptrans);
+                }
+                for (auto &l : tmp2.dest_state->transition_list) {
+                    transition tmptrans;
+                    tmptrans.dest_state = l.dest_state;
+                    tmptrans.character = l.character;
+                    newstate.transition_list.push_back(tmptrans);
+                }
+
+                k.dest_state=&newstate;
+                i.transition_list.erase(i.transition_list.begin()+(a-1));
+
+                goto remake;
+            }
+
+            a++;
+
+            }
+
+    }
+
+
+
+    ar2 = completion(ar2);
+    return ar2;
+}
+Automate complementarization(Automate &ar) {
+    Automate ar2;
+    ar2 = Automate(ar);
+    if(ar.isComplete() && ar.isComplete()){
+        for (auto &i : ar2.state_list) {
+            i.initial = !i.initial;
+            i.terminal = !i.terminal;
+        }
+
+    }
+    return ar2;
+}
+
+Automate standardisation(Automate &ar) {
+    Automate ar2;
+    ar2 = Automate(ar);
+
+    state newentry;
+    newentry.terminal = false;
+    newentry.initial = true;
+    newentry.id = "I";
+    for (auto &i : ar2.state_list) {
+        if(i.initial){
+            i.initial=false;
+            if(i.terminal){
+                newentry.terminal=true;
+            }
+            for (auto &k : i.transition_list) {
+                transition tmptrans;
+                tmptrans.dest_state = k.dest_state;
+                tmptrans.character = k.character;
+                newentry.transition_list.push_back(tmptrans);
+            }
+        }
+
+
+    }
+    ar2.state_list.push_back(newentry);
+    return ar2;
 }
