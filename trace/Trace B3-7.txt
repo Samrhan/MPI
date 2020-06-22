@@ -1,0 +1,105 @@
+Nom : automate/B3-7.txt
+Alphabet reconnu : {a}
+Il a 2 etats
+        | a  |
+
+  T   0 | 1  |
+I     1 | 1  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate est deterministe
+L'automate est complet
+Automate deja determinise et complet
+Nom : automate/B3-7.txt
+Alphabet reconnu : {a}
+Il a 2 etats
+        | a  |
+
+  T   0 | 1  |
+I     1 | 1  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 1
+
+   Partie 1
+      Sous-Partie: Etat Terminaux
+
+   Etats: 0
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 0
+   Etats: 1
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 0
+   Etats: 0L'automate automate/B3-7.txt est deja minimal
+Nom : automate/B3-7.txt Minimal
+Alphabet reconnu : {a}
+Il a 2 etats
+        | a  |
+
+I     0 | 0  |
+  T   1 | 0  |
+
+Table de correspondance automate/B3-7.txt vers automate/B3-7.txt Minimal:
+
+ 0:  1
+ 1:  0
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-7.txt Minimal Complementaire
+Alphabet reconnu : {a}
+Il a 1 etats
+        | a  |
+
+I T   0 | 0  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+   Etat 0, Transition 'a' vers l'état initial
+Nom : automate/B3-7.txt Minimal Complementaire Standard
+Alphabet reconnu : {a}
+Il a 2 etats
+        | a  |
+
+  T   0 | 0  |
+I T   2 | 0  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

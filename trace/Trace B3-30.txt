@@ -1,0 +1,137 @@
+Nom : automate/B3-30.txt
+Alphabet reconnu : {a}
+Il a 5 etats
+        | a  |
+
+  T   0 | 3  |
+I     1 | 2  |
+      2 | 3  |
+  T   3 | 4  |
+  T   4 | 0  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate est deterministe
+L'automate est complet
+Automate deja determinise et complet
+Nom : automate/B3-30.txt
+Alphabet reconnu : {a}
+Il a 5 etats
+        | a  |
+
+  T   0 | 3  |
+I     1 | 2  |
+      2 | 3  |
+  T   3 | 4  |
+  T   4 | 0  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 1, 2
+
+   Partie 1
+      Sous-Partie: Etat Terminaux
+
+   Etats: 0, 3, 4
+
+             Partition 1
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+   Etats: 1
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+   Etats: 2
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+   Etats: 0, 3, 4
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+   Etats: 1
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+   Etats: 2
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+   Etats: 0, 3, 4Nom : automate/B3-30.txt Minimal
+Alphabet reconnu : {a}
+Il a 3 etats
+        | a  |
+
+I     0 | 1  |
+      1 | 2  |
+  T   2 | 2  |
+
+Table de correspondance automate/B3-30.txt vers automate/B3-30.txt Minimal:
+
+ 0:  1
+ 1:  2
+ 2:  0 + 3 + 4
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-30.txt Minimal Complementaire
+Alphabet reconnu : {a}
+Il a 3 etats
+        | a  |
+
+I T   0 | 1  |
+  T   1 | 2  |
+      2 | 2  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+L'automate est deja standardise
+Nom : automate/B3-30.txt Minimal Complementaire
+Alphabet reconnu : {a}
+Il a 3 etats
+        | a  |
+
+I T   0 | 1  |
+  T   1 | 2  |
+      2 | 2  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

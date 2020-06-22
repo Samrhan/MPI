@@ -1,0 +1,147 @@
+Nom : automate/B3-29.txt
+Alphabet reconnu : {a}
+Il a 6 etats
+          | a    |
+
+  T     0 | 4    |
+I       1 | 2,4  |
+        2 | 3    |
+  T     3 | 0,2  |
+        4 | 3,5  |
+        5 | 0    |
+   - est synchrone
+   - est non deterministe
+   - est non complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate n'est pas deterministe
+   Etat 1, meme caractere pour plusieurs transitions
+    - caractere a, vers: 2 4 
+   Etat 3, meme caractere pour plusieurs transitions
+    - caractere a, vers: 0 2 
+   Etat 4, meme caractere pour plusieurs transitions
+    - caractere a, vers: 3 5 
+Determinisation reussi
+L'automate est complet
+Nom : automate/B3-29.txt Deterministe
+Alphabet reconnu : {a}
+Il a 8 etats
+                | a          |
+
+  T         0.2 | 3.4        |
+  T     0.2.3.4 | 0.2.3.4.5  |
+  T   0.2.3.4.5 | 0.2.3.4.5  |
+  T     0.2.3.5 | 0.2.3.4    |
+I             1 | 2.4        |
+            2.4 | 3.5        |
+  T         3.4 | 0.2.3.5    |
+  T         3.5 | 0.2        |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 1, 2.4
+
+   Partie 1
+      Sous-Partie: Etat Terminaux
+
+   Etats: 0.2, 0.2.3.4, 0.2.3.4.5, 0.2.3.5, 3.4, 3.5
+
+             Partition 1
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+   Etats: 1
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+   Etats: 2.4
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+   Etats: 0.2, 0.2.3.4, 0.2.3.4.5, 0.2.3.5, 3.4, 3.5
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+   Etats: 1
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+   Etats: 2.4
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+   Etats: 0.2, 0.2.3.4, 0.2.3.4.5, 0.2.3.5, 3.4, 3.5Nom : automate/B3-29.txt Deterministe Minimal
+Alphabet reconnu : {a}
+Il a 3 etats
+        | a  |
+
+I     0 | 1  |
+      1 | 2  |
+  T   2 | 2  |
+
+Table de correspondance automate/B3-29.txt Deterministe vers automate/B3-29.txt Deterministe Minimal:
+
+ 0:  1
+ 1:  2.4
+ 2:  0.2 + 0.2.3.4 + 0.2.3.4.5 + 0.2.3.5 + 3.4 + 3.5
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-29.txt Deterministe Minimal Complementaire
+Alphabet reconnu : {a}
+Il a 3 etats
+        | a  |
+
+I T   0 | 1  |
+  T   1 | 2  |
+      2 | 2  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+L'automate est deja standardise
+Nom : automate/B3-29.txt Deterministe Minimal Complementaire
+Alphabet reconnu : {a}
+Il a 3 etats
+        | a  |
+
+I T   0 | 1  |
+  T   1 | 2  |
+      2 | 2  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

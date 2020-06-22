@@ -1,0 +1,253 @@
+Nom : automate/B3-28.txt
+Alphabet reconnu : {a}
+Il a 6 etats
+          | a    |
+
+  T     0 | 4    |
+I       1 | 2,4  |
+        2 | 3    |
+  T     3 | 2    |
+        4 | 5    |
+        5 | 0    |
+   - est synchrone
+   - est non deterministe
+   - est non complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate n'est pas deterministe
+   Etat 1, meme caractere pour plusieurs transitions
+    - caractere a, vers: 2 4 
+Determinisation reussi
+L'automate est complet
+Nom : automate/B3-28.txt Deterministe
+Alphabet reconnu : {a}
+Il a 7 etats
+          | a    |
+
+  T   0.2 | 3.4  |
+  T   0.3 | 2.4  |
+I       1 | 2.4  |
+      2.4 | 3.5  |
+      2.5 | 0.3  |
+  T   3.4 | 2.5  |
+  T   3.5 | 0.2  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 1, 2.4, 2.5
+
+   Partie 1
+      Sous-Partie: Etat Terminaux
+
+   Etats: 0.2, 0.3, 3.4, 3.5
+
+             Partition 1
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+   Etats: 1
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+   Etats: 2.4, 2.5
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+   Etats: 0.2, 3.5
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+   Etats: 0.3, 3.4
+
+             Partition 2
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 1
+   Etats: 1
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 2
+   Etats: 2.4
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 3
+   Etats: 2.5
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 3
+   Etats: 0.2
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 2
+   Etats: 3.5
+
+   Partie 5
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 1
+   Etats: 0.3, 3.4
+
+             Partition 3
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 1
+   Etats: 1
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 4
+   Etats: 2.4
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 5
+   Etats: 2.5
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 5
+   Etats: 0.2
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 3
+   Etats: 3.5
+
+   Partie 5
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 1
+   Etats: 0.3
+
+   Partie 6
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 2
+   Etats: 3.4
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+   Etats: 1
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 4
+   Etats: 2.4
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 5
+   Etats: 2.5
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 6
+   Etats: 0.2
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 3
+   Etats: 3.5
+
+   Partie 5
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+   Etats: 0.3
+
+   Partie 6
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+   Etats: 3.4L'automate automate/B3-28.txt Deterministe est deja minimal
+Nom : automate/B3-28.txt Deterministe Minimal
+Alphabet reconnu : {a}
+Il a 7 etats
+        | a  |
+
+I     0 | 1  |
+      1 | 4  |
+      2 | 5  |
+  T   3 | 6  |
+  T   4 | 3  |
+  T   5 | 1  |
+  T   6 | 2  |
+
+Table de correspondance automate/B3-28.txt Deterministe vers automate/B3-28.txt Deterministe Minimal:
+
+ 0:  1
+ 1:  2.4
+ 2:  2.5
+ 3:  0.2
+ 4:  3.5
+ 5:  0.3
+ 6:  3.4
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-28.txt Deterministe Minimal Complementaire
+Alphabet reconnu : {a}
+Il a 7 etats
+        | a  |
+
+I T   0 | 1  |
+  T   1 | 4  |
+      4 | 3  |
+      3 | 6  |
+      6 | 2  |
+  T   2 | 5  |
+      5 | 1  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+L'automate est deja standardise
+Nom : automate/B3-28.txt Deterministe Minimal Complementaire
+Alphabet reconnu : {a}
+Il a 7 etats
+        | a  |
+
+I T   0 | 1  |
+  T   1 | 4  |
+      4 | 3  |
+      3 | 6  |
+      6 | 2  |
+  T   2 | 5  |
+      5 | 1  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

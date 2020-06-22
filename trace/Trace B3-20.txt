@@ -1,0 +1,220 @@
+Nom : automate/B3-20.txt
+Alphabet reconnu : {a, b, c, d}
+Il a 9 etats
+        | a  |b  |c  |d  |
+
+I     0 | -  |-  |-  |5  |
+I     1 | 2  |-  |-  |-  |
+      2 | -  |3  |-  |-  |
+      3 | -  |-  |4  |-  |
+      4 | -  |-  |-  |5  |
+  T   5 | -  |-  |-  |-  |
+I     6 | 2  |-  |-  |-  |
+I     7 | -  |3  |-  |-  |
+I     8 | -  |-  |4  |-  |
+   - est synchrone
+   - est non deterministe
+   - est non complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate n'est pas deterministe
+   Plus d'un état initial: 0 1 6 7 8 
+Determinisation reussi
+L'automate n'est pas complet
+   Transition manquante aux etats: 2 3 4 5 
+Nom : automate/B3-20.txt Deterministe Complet
+Alphabet reconnu : {a, b, c, d}
+Il a 6 etats
+        | a  |b  |c  |d  |
+
+I   0.1.6.7.8 | 2  |3  |4  |5  |
+      2 | 5  |3  |5  |5  |
+      3 | 5  |5  |4  |5  |
+      4 | 5  |5  |5  |5  |
+  T   5 | 5  |5  |5  |5  |
+      5 | 5  |5  |5  |5  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+Completion reussi
+Nom : automate/B3-20.txt Deterministe Complet
+Alphabet reconnu : {a, b, c, d}
+Il a 6 etats
+        | a  |b  |c  |d  |
+
+I   0.1.6.7.8 | 2  |3  |4  |5  |
+      2 | 5  |3  |5  |5  |
+      3 | 5  |5  |4  |5  |
+      4 | 5  |5  |5  |5  |
+  T   5 | 5  |5  |5  |5  |
+      5 | 5  |5  |5  |5  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 0.1.6.7.8, 2, 3, 4, 5
+
+   Partie 1
+      Sous-Partie: Etat Terminaux
+
+   Etats: 5
+
+             Partition 1
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+         c : Partie 0
+         d : Partie 0
+   Etats: 0.1.6.7.8
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 1
+         c : Partie 0
+         d : Partie 0
+   Etats: 2
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 1
+         c : Partie 0
+         d : Partie 1
+   Etats: 3
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 1
+         c : Partie 0
+         d : Partie 1
+   Etats: 4, 5
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 1
+         c : Partie 0
+         d : Partie 1
+   Etats: 5
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+         b : Partie 2
+         c : Partie 3
+         d : Partie 3
+   Etats: 0.1.6.7.8
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 3
+         b : Partie 4
+         c : Partie 2
+         d : Partie 3
+   Etats: 2
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 3
+         b : Partie 4
+         c : Partie 3
+         d : Partie 4
+   Etats: 3
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 3
+         b : Partie 4
+         c : Partie 3
+         d : Partie 4
+   Etats: 4, 5
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 3
+         b : Partie 4
+         c : Partie 3
+         d : Partie 4
+   Etats: 5Nom : automate/B3-20.txt Deterministe Complet Minimal
+Alphabet reconnu : {a, b, c, d}
+Il a 5 etats
+        | a  |b  |c  |d  |
+
+I     0 | 1  |2  |3  |3  |
+      1 | 3  |4  |2  |3  |
+      2 | 3  |4  |3  |4  |
+      3 | 3  |4  |3  |4  |
+  T   4 | 3  |4  |3  |4  |
+
+Table de correspondance automate/B3-20.txt Deterministe Complet vers automate/B3-20.txt Deterministe Complet Minimal:
+
+ 0:  0.1.6.7.8
+ 1:  2
+ 2:  3
+ 3:  4 + 5
+ 4:  5
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-20.txt Deterministe Complet Minimal Complementaire
+Alphabet reconnu : {a, b, c, d}
+Il a 5 etats
+        | a  |b  |c  |d  |
+
+I T   0 | 1  |2  |3  |3  |
+  T   1 | 3  |4  |2  |3  |
+  T   3 | 3  |4  |3  |4  |
+      4 | 3  |4  |3  |4  |
+  T   2 | 3  |4  |3  |4  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+L'automate est deja standardise
+Nom : automate/B3-20.txt Deterministe Complet Minimal Complementaire
+Alphabet reconnu : {a, b, c, d}
+Il a 5 etats
+        | a  |b  |c  |d  |
+
+I T   0 | 1  |2  |3  |3  |
+  T   1 | 3  |4  |2  |3  |
+  T   3 | 3  |4  |3  |4  |
+      4 | 3  |4  |3  |4  |
+  T   2 | 3  |4  |3  |4  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

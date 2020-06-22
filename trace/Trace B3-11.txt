@@ -1,0 +1,142 @@
+Nom : automate/B3-11.txt
+Alphabet reconnu : {a, b}
+Il a 4 etats
+        | a  |b  |
+
+I     0 | 2  |3  |
+      1 | 3  |3  |
+  T   2 | 1  |0  |
+      3 | 3  |3  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate est deterministe
+L'automate est complet
+Automate deja determinise et complet
+Nom : automate/B3-11.txt
+Alphabet reconnu : {a, b}
+Il a 4 etats
+        | a  |b  |
+
+I     0 | 2  |3  |
+      1 | 3  |3  |
+  T   2 | 1  |0  |
+      3 | 3  |3  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 0, 1, 3
+
+   Partie 1
+      Sous-Partie: Etat Terminaux
+
+   Etats: 2
+
+             Partition 1
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+         b : Partie 0
+   Etats: 0
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+   Etats: 1, 3
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+   Etats: 2
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+         b : Partie 1
+   Etats: 0
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+         b : Partie 1
+   Etats: 1, 3
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+         b : Partie 0
+   Etats: 2Nom : automate/B3-11.txt Minimal
+Alphabet reconnu : {a, b}
+Il a 3 etats
+        | a  |b  |
+
+I     0 | 2  |1  |
+      1 | 1  |1  |
+  T   2 | 1  |0  |
+
+Table de correspondance automate/B3-11.txt vers automate/B3-11.txt Minimal:
+
+ 0:  0
+ 1:  1 + 3
+ 2:  2
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-11.txt Minimal Complementaire
+Alphabet reconnu : {a, b}
+Il a 3 etats
+        | a  |b  |
+
+I T   0 | 2  |1  |
+      2 | 1  |0  |
+  T   1 | 1  |1  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+   Etat 2, Transition 'b' vers l'état initial
+Nom : automate/B3-11.txt Minimal Complementaire Standard
+Alphabet reconnu : {a, b}
+Il a 4 etats
+        | a  |b  |
+
+  T   0 | 2  |1  |
+      2 | 1  |0  |
+  T   1 | 1  |1  |
+I T   4 | 2  |1  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

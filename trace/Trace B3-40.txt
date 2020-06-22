@@ -1,0 +1,241 @@
+Nom : automate/B3-40.txt
+Alphabet reconnu : {a, b}
+Il a 3 etats
+          | a    |b    |
+
+I T     0 | -    |1,2  |
+I       1 | 0,2  |2    |
+  T     2 | 0    |-    |
+   - est synchrone
+   - est non deterministe
+   - est non complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate n'est pas deterministe
+   Plus d'un état initial: 0 1 
+   Etat 0, meme caractere pour plusieurs transitions
+    - caractere b, vers: 1 2 
+   Etat 1, meme caractere pour plusieurs transitions
+    - caractere a, vers: 0 2 
+Determinisation reussi
+L'automate n'est pas complet
+   Transition manquante aux etats: 0 2 
+Nom : automate/B3-40.txt Deterministe Complet
+Alphabet reconnu : {a, b}
+Il a 6 etats
+          | a    |b    |
+
+I T   0.1 | 0.2  |1.2  |
+  T   0.2 | 0    |1.2  |
+  T     0 | 5    |1.2  |
+  T   1.2 | 0.2  |2    |
+  T     2 | 0    |5    |
+        5 | 5    |5    |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+Completion reussi
+Nom : automate/B3-40.txt Deterministe Complet
+Alphabet reconnu : {a, b}
+Il a 6 etats
+          | a    |b    |
+
+I T   0.1 | 0.2  |1.2  |
+  T   0.2 | 0    |1.2  |
+  T     0 | 5    |1.2  |
+  T   1.2 | 0.2  |2    |
+  T     2 | 0    |5    |
+        5 | 5    |5    |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 5
+
+   Partie 1
+      Sous-Partie: Etat Terminaux
+
+   Etats: 0.1, 0.2, 0, 1.2, 2
+
+             Partition 1
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+   Etats: 5
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+         b : Partie 1
+   Etats: 0.1, 0.2, 1.2
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 1
+   Etats: 0
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+         b : Partie 0
+   Etats: 2
+
+             Partition 2
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 0
+         b : Partie 0
+   Etats: 5
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 1
+         b : Partie 1
+   Etats: 0.1
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 2
+         b : Partie 1
+   Etats: 0.2
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 1
+         b : Partie 3
+   Etats: 1.2
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 0
+         b : Partie 1
+   Etats: 0
+
+   Partie 5
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 2
+         b : Partie 0
+   Etats: 2
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 0
+         b : Partie 0
+   Etats: 5
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+         b : Partie 3
+   Etats: 0.1
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 4
+         b : Partie 3
+   Etats: 0.2
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+         b : Partie 5
+   Etats: 1.2
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 0
+         b : Partie 3
+   Etats: 0
+
+   Partie 5
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 4
+         b : Partie 0
+   Etats: 2L'automate automate/B3-40.txt Deterministe Complet est deja minimal
+Nom : automate/B3-40.txt Deterministe Complet Minimal
+Alphabet reconnu : {a, b}
+Il a 6 etats
+        | a  |b  |
+
+      0 | 0  |0  |
+I T   1 | 2  |3  |
+  T   2 | 4  |3  |
+  T   3 | 2  |5  |
+  T   4 | 0  |3  |
+  T   5 | 4  |0  |
+
+Table de correspondance automate/B3-40.txt Deterministe Complet vers automate/B3-40.txt Deterministe Complet Minimal:
+
+ 0:  5
+ 1:  0.1
+ 2:  0.2
+ 3:  1.2
+ 4:  0
+ 5:  2
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-40.txt Deterministe Complet Minimal Complementaire
+Alphabet reconnu : {a, b}
+Il a 6 etats
+        | a  |b  |
+
+I     1 | 2  |3  |
+      2 | 4  |3  |
+      4 | 0  |3  |
+  T   0 | 0  |0  |
+      3 | 2  |5  |
+      5 | 4  |0  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+L'automate est deja standardise
+Nom : automate/B3-40.txt Deterministe Complet Minimal Complementaire
+Alphabet reconnu : {a, b}
+Il a 6 etats
+        | a  |b  |
+
+I     1 | 2  |3  |
+      2 | 4  |3  |
+      4 | 0  |3  |
+  T   0 | 0  |0  |
+      3 | 2  |5  |
+      5 | 4  |0  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

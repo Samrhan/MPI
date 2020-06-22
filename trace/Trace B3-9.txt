@@ -1,0 +1,349 @@
+Erreur dans le fichier. Generation d'un automate par defaut
+Nom : automate/B3-9.txt
+Alphabet reconnu : {a, b}
+Il a 6 etats
+        | a  |b  |*  |
+
+  T   0 | -  |-  |-  |
+I T   1 | 2  |-  |-  |
+      2 | 3  |3  |-  |
+      3 | 4  |-  |-  |
+      4 | 5  |5  |-  |
+      5 | 0  |-  |-  |
+   - est asynchrone
+   - est non deterministe
+   - est non complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate n'est pas deterministe
+   L'automate n'est pas sychrone
+Determinisation reussi
+L'automate n'est pas complet
+   Transition manquante aux etats: 0 1 3 5 
+Nom : automate/B3-9.txt Deterministe Complet
+Alphabet reconnu : {a, b}
+Il a 7 etats
+        | a  |b  |
+
+I T   1 | 2  |6  |
+      2 | 3  |3  |
+      3 | 4  |6  |
+      4 | 5  |5  |
+      5 | 0  |6  |
+  T   0 | 6  |6  |
+      6 | 6  |6  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+Completion reussi
+Nom : automate/B3-9.txt Deterministe Complet
+Alphabet reconnu : {a, b}
+Il a 7 etats
+        | a  |b  |
+
+I T   1 | 2  |6  |
+      2 | 3  |3  |
+      3 | 4  |6  |
+      4 | 5  |5  |
+      5 | 0  |6  |
+  T   0 | 6  |6  |
+      6 | 6  |6  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 2, 3, 4, 5, 6
+
+   Partie 1
+      Sous-Partie: Etat Terminaux
+
+   Etats: 1, 0
+
+             Partition 1
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+   Etats: 2, 3, 4, 6
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+         b : Partie 0
+   Etats: 5
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+   Etats: 1, 0
+
+             Partition 2
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 0
+         b : Partie 0
+   Etats: 2, 3, 6
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 1
+         b : Partie 1
+   Etats: 4
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 2
+         b : Partie 0
+   Etats: 5
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 0
+         b : Partie 0
+   Etats: 1, 0
+
+             Partition 3
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 0
+         b : Partie 0
+   Etats: 2, 6
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 1
+         b : Partie 0
+   Etats: 3
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 2
+         b : Partie 2
+   Etats: 4
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 3
+         b : Partie 0
+   Etats: 5
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de la partition 2)
+         a : Partie 0
+         b : Partie 0
+   Etats: 1, 0
+
+             Partition 4
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 3)
+         a : Partie 1
+         b : Partie 1
+   Etats: 2
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 3)
+         a : Partie 0
+         b : Partie 0
+   Etats: 6
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 3)
+         a : Partie 2
+         b : Partie 0
+   Etats: 3
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 3)
+         a : Partie 3
+         b : Partie 3
+   Etats: 4
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de la partition 3)
+         a : Partie 4
+         b : Partie 0
+   Etats: 5
+
+   Partie 5
+      Sous-Partie: (transition vers les groupes de la partition 3)
+         a : Partie 0
+         b : Partie 0
+   Etats: 1, 0
+
+             Partition 5
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 4)
+         a : Partie 2
+         b : Partie 2
+   Etats: 2
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 4)
+         a : Partie 1
+         b : Partie 1
+   Etats: 6
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 4)
+         a : Partie 3
+         b : Partie 1
+   Etats: 3
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 4)
+         a : Partie 4
+         b : Partie 4
+   Etats: 4
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de la partition 4)
+         a : Partie 5
+         b : Partie 1
+   Etats: 5
+
+   Partie 5
+      Sous-Partie: (transition vers les groupes de la partition 4)
+         a : Partie 0
+         b : Partie 1
+   Etats: 1
+
+   Partie 6
+      Sous-Partie: (transition vers les groupes de la partition 4)
+         a : Partie 1
+         b : Partie 1
+   Etats: 0
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+         b : Partie 2
+   Etats: 2
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+         b : Partie 1
+   Etats: 6
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 3
+         b : Partie 1
+   Etats: 3
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 4
+         b : Partie 4
+   Etats: 4
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 6
+         b : Partie 1
+   Etats: 5
+
+   Partie 5
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 0
+         b : Partie 1
+   Etats: 1
+
+   Partie 6
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+         b : Partie 1
+   Etats: 0L'automate automate/B3-9.txt Deterministe Complet est deja minimal
+Nom : automate/B3-9.txt Deterministe Complet Minimal
+Alphabet reconnu : {a, b}
+Il a 7 etats
+        | a  |b  |
+
+      0 | 2  |2  |
+      1 | 1  |1  |
+      2 | 3  |1  |
+      3 | 4  |4  |
+      4 | 6  |1  |
+I T   5 | 0  |1  |
+  T   6 | 1  |1  |
+
+Table de correspondance automate/B3-9.txt Deterministe Complet vers automate/B3-9.txt Deterministe Complet Minimal:
+
+ 0:  2
+ 1:  6
+ 2:  3
+ 3:  4
+ 4:  5
+ 5:  1
+ 6:  0
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-9.txt Deterministe Complet Minimal Complementaire
+Alphabet reconnu : {a, b}
+Il a 7 etats
+        | a  |b  |
+
+I     5 | 0  |1  |
+  T   0 | 2  |2  |
+  T   2 | 3  |1  |
+  T   3 | 4  |4  |
+  T   4 | 6  |1  |
+      6 | 1  |1  |
+  T   1 | 1  |1  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+L'automate est deja standardise
+Nom : automate/B3-9.txt Deterministe Complet Minimal Complementaire
+Alphabet reconnu : {a, b}
+Il a 7 etats
+        | a  |b  |
+
+I     5 | 0  |1  |
+  T   0 | 2  |2  |
+  T   2 | 3  |1  |
+  T   3 | 4  |4  |
+  T   4 | 6  |1  |
+      6 | 1  |1  |
+  T   1 | 1  |1  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi
