@@ -1,0 +1,125 @@
+Nom : automate/B3-35.txt
+Alphabet reconnu : {a, b}
+Il a 11 etats
+          | a    |b    |*    |
+
+I       0 | -    |-    |1,4  |
+        1 | 2    |-    |-    |
+        2 | -    |3    |-    |
+        3 | -    |-    |10   |
+        4 | -    |-    |5,8  |
+        5 | 6    |-    |-    |
+        6 | -    |7    |-    |
+        7 | -    |-    |5,8  |
+        8 | 9    |-    |-    |
+        9 | -    |-    |10   |
+  T    10 | -    |-    |-    |
+   - est asynchrone
+   - est non deterministe
+   - est non complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate n'est pas deterministe
+   L'automate n'est pas sychrone
+   Etat 0, meme caractere pour plusieurs transitions
+    - caractere *, vers: 1 4 
+   Etat 4, meme caractere pour plusieurs transitions
+    - caractere *, vers: 5 8 
+   Etat 7, meme caractere pour plusieurs transitions
+    - caractere *, vers: 5 8 
+Determinisation reussi
+L'automate n'est pas complet
+   Transition manquante aux etats: 0 
+Nom : automate/B3-35.txt Deterministe Complet
+Alphabet reconnu : {a, b}
+Il a 2 etats
+        | a  |b  |
+
+I     0 | 1  |1  |
+      1 | 1  |1  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+Completion reussi
+Nom : automate/B3-35.txt Deterministe Complet
+Alphabet reconnu : {a, b}
+Il a 2 etats
+        | a  |b  |
+
+I     0 | 1  |1  |
+      1 | 1  |1  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 0, 1
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 0
+         b : Partie 0
+   Etats: 0, 1Nom : automate/B3-35.txt Deterministe Complet Minimal
+Alphabet reconnu : {a, b}
+Il a 1 etats
+        | a  |b  |
+
+I     0 | 0  |0  |
+
+Table de correspondance automate/B3-35.txt Deterministe Complet vers automate/B3-35.txt Deterministe Complet Minimal:
+
+ 0:  0 + 1
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-35.txt Deterministe Complet Minimal Complementaire
+Alphabet reconnu : {a, b}
+Il a 1 etats
+        | a  |b  |
+
+I T   0 | 0  |0  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+   Etat 0, Transition 'a' vers l'état initial
+   Etat 0, Transition 'b' vers l'état initial
+Nom : automate/B3-35.txt Deterministe Complet Minimal Complementaire Standard
+Alphabet reconnu : {a, b}
+Il a 2 etats
+        | a  |b  |
+
+  T   0 | 0  |0  |
+I T   2 | 0  |0  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

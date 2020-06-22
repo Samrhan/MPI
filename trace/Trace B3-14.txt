@@ -1,0 +1,241 @@
+Nom : automate/B3-14.txt
+Alphabet reconnu : {a, b, c, d}
+Il a 4 etats
+        | a  |b  |c  |d  |
+
+I     0 | 0  |2  |3  |1  |
+  T   1 | -  |-  |-  |1  |
+      2 | -  |2  |3  |1  |
+      3 | -  |-  |3  |1  |
+   - est synchrone
+   - est deterministe
+   - est non complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate est deterministe
+L'automate n'est pas complet
+   Transition manquante aux etats: 1 2 3 
+L'automate n'est pas complet
+   Transition manquante aux etats: 1 2 3 
+Nom : automate/B3-14.txt Complet
+Alphabet reconnu : {a, b, c, d}
+Il a 5 etats
+        | a  |b  |c  |d  |
+
+I     0 | 0  |2  |3  |1  |
+      2 | 4  |2  |3  |1  |
+      3 | 4  |4  |3  |1  |
+  T   1 | 4  |4  |4  |1  |
+      4 | 4  |4  |4  |4  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+Completion reussi
+Nom : automate/B3-14.txt Complet
+Alphabet reconnu : {a, b, c, d}
+Il a 5 etats
+        | a  |b  |c  |d  |
+
+I     0 | 0  |2  |3  |1  |
+      2 | 4  |2  |3  |1  |
+      3 | 4  |4  |3  |1  |
+  T   1 | 4  |4  |4  |1  |
+      4 | 4  |4  |4  |4  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 0, 2, 3, 4
+
+   Partie 1
+      Sous-Partie: Etat Terminaux
+
+   Etats: 1
+
+             Partition 1
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+         c : Partie 0
+         d : Partie 1
+   Etats: 0, 2, 3
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+         c : Partie 0
+         d : Partie 0
+   Etats: 4
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+         c : Partie 0
+         d : Partie 1
+   Etats: 1
+
+             Partition 2
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 0
+         b : Partie 0
+         c : Partie 0
+         d : Partie 2
+   Etats: 0
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 1
+         b : Partie 0
+         c : Partie 0
+         d : Partie 2
+   Etats: 2
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 1
+         b : Partie 1
+         c : Partie 0
+         d : Partie 2
+   Etats: 3
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 1
+         b : Partie 1
+         c : Partie 1
+         d : Partie 1
+   Etats: 4
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de la partition 1)
+         a : Partie 1
+         b : Partie 1
+         c : Partie 1
+         d : Partie 2
+   Etats: 1
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 0
+         b : Partie 1
+         c : Partie 2
+         d : Partie 4
+   Etats: 0
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 3
+         b : Partie 1
+         c : Partie 2
+         d : Partie 4
+   Etats: 2
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 3
+         b : Partie 3
+         c : Partie 2
+         d : Partie 4
+   Etats: 3
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 3
+         b : Partie 3
+         c : Partie 3
+         d : Partie 3
+   Etats: 4
+
+   Partie 4
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 3
+         b : Partie 3
+         c : Partie 3
+         d : Partie 4
+   Etats: 1L'automate automate/B3-14.txt Complet est deja minimal
+Nom : automate/B3-14.txt Complet Minimal
+Alphabet reconnu : {a, b, c, d}
+Il a 5 etats
+        | a  |b  |c  |d  |
+
+I     0 | 0  |1  |2  |4  |
+      1 | 3  |1  |2  |4  |
+      2 | 3  |3  |2  |4  |
+      3 | 3  |3  |3  |3  |
+  T   4 | 3  |3  |3  |4  |
+
+Table de correspondance automate/B3-14.txt Complet vers automate/B3-14.txt Complet Minimal:
+
+ 0:  0
+ 1:  2
+ 2:  3
+ 3:  4
+ 4:  1
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-14.txt Complet Minimal Complementaire
+Alphabet reconnu : {a, b, c, d}
+Il a 5 etats
+        | a  |b  |c  |d  |
+
+I T   0 | 0  |1  |2  |4  |
+  T   1 | 3  |1  |2  |4  |
+  T   3 | 3  |3  |3  |3  |
+  T   2 | 3  |3  |2  |4  |
+      4 | 3  |3  |3  |4  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+   Etat 0, Transition 'a' vers l'état initial
+Nom : automate/B3-14.txt Complet Minimal Complementaire Standard
+Alphabet reconnu : {a, b, c, d}
+Il a 6 etats
+        | a  |b  |c  |d  |
+
+  T   0 | 0  |1  |2  |4  |
+  T   1 | 3  |1  |2  |4  |
+  T   3 | 3  |3  |3  |3  |
+  T   2 | 3  |3  |2  |4  |
+      4 | 3  |3  |3  |4  |
+I T   6 | 0  |1  |2  |4  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

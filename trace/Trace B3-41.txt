@@ -1,0 +1,161 @@
+Nom : automate/B3-41.txt
+Alphabet reconnu : {a, b}
+Il a 6 etats
+        | a  |b  |
+
+I     0 | 1  |4  |
+  T   1 | 2  |3  |
+  T   2 | 2  |3  |
+  T   3 | 5  |5  |
+  T   4 | 5  |5  |
+      5 | 5  |5  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate est deterministe
+L'automate est complet
+Automate deja determinise et complet
+Nom : automate/B3-41.txt
+Alphabet reconnu : {a, b}
+Il a 6 etats
+        | a  |b  |
+
+I     0 | 1  |4  |
+  T   1 | 2  |3  |
+  T   2 | 2  |3  |
+  T   3 | 5  |5  |
+  T   4 | 5  |5  |
+      5 | 5  |5  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 0, 5
+
+   Partie 1
+      Sous-Partie: Etat Terminaux
+
+   Etats: 1, 2, 3, 4
+
+             Partition 1
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+         b : Partie 1
+   Etats: 0
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+   Etats: 5
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 1
+         b : Partie 1
+   Etats: 1, 2
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de la partition 0)
+         a : Partie 0
+         b : Partie 0
+   Etats: 3, 4
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+         b : Partie 3
+   Etats: 0
+
+   Partie 1
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+         b : Partie 1
+   Etats: 5
+
+   Partie 2
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 2
+         b : Partie 3
+   Etats: 1, 2
+
+   Partie 3
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 1
+         b : Partie 1
+   Etats: 3, 4Nom : automate/B3-41.txt Minimal
+Alphabet reconnu : {a, b}
+Il a 4 etats
+        | a  |b  |
+
+I     0 | 2  |3  |
+      1 | 1  |1  |
+  T   2 | 2  |3  |
+  T   3 | 1  |1  |
+
+Table de correspondance automate/B3-41.txt vers automate/B3-41.txt Minimal:
+
+ 0:  0
+ 1:  5
+ 2:  1 + 2
+ 3:  3 + 4
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-41.txt Minimal Complementaire
+Alphabet reconnu : {a, b}
+Il a 4 etats
+        | a  |b  |
+
+I T   0 | 2  |3  |
+      2 | 2  |3  |
+      3 | 1  |1  |
+  T   1 | 1  |1  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+L'automate est deja standardise
+Nom : automate/B3-41.txt Minimal Complementaire
+Alphabet reconnu : {a, b}
+Il a 4 etats
+        | a  |b  |
+
+I T   0 | 2  |3  |
+      2 | 2  |3  |
+      3 | 1  |1  |
+  T   1 | 1  |1  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

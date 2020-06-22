@@ -1,0 +1,98 @@
+Nom : automate/B3-38.txt
+Alphabet reconnu : {a, b}
+Il a 4 etats
+        | a  |b  |
+
+I T   0 | 1  |3  |
+  T   1 | 1  |2  |
+  T   2 | 3  |3  |
+  T   3 | 3  |3  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate est deterministe
+L'automate est complet
+Automate deja determinise et complet
+Nom : automate/B3-38.txt
+Alphabet reconnu : {a, b}
+Il a 4 etats
+        | a  |b  |
+
+I T   0 | 1  |3  |
+  T   1 | 1  |2  |
+  T   2 | 3  |3  |
+  T   3 | 3  |3  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Terminaux
+
+   Etats: 0, 1, 2, 3
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 0
+         b : Partie 0
+   Etats: 0, 1, 2, 3Nom : automate/B3-38.txt Minimal
+Alphabet reconnu : {a, b}
+Il a 1 etats
+        | a  |b  |
+
+I T   0 | 0  |0  |
+
+Table de correspondance automate/B3-38.txt vers automate/B3-38.txt Minimal:
+
+ 0:  0 + 1 + 2 + 3
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-38.txt Minimal Complementaire
+Alphabet reconnu : {a, b}
+Il a 1 etats
+        | a  |b  |
+
+I     0 | 0  |0  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+   Etat 0, Transition 'a' vers l'état initial
+   Etat 0, Transition 'b' vers l'état initial
+Nom : automate/B3-38.txt Minimal Complementaire Standard
+Alphabet reconnu : {a, b}
+Il a 2 etats
+        | a  |b  |
+
+      0 | 0  |0  |
+I     2 | 0  |0  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

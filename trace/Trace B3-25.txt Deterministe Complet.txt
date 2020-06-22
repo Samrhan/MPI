@@ -1,0 +1,369 @@
+Nom : automate/B3-25.txt Deterministe Complet
+Alphabet reconnu : {a, b, c, d}
+Il a 9 etats
+          | a    |b    |c    |d    |
+
+I       1 | 1.2  |3    |4    |0    |
+      1.2 | 1.2  |2.3  |4    |0    |
+      2.3 | 8    |2.3  |3.4  |0    |
+      3.4 | 8    |8    |3.4  |0.4  |
+  T   0.4 | 8    |8    |8    |0.4  |
+  T     0 | 8    |8    |8    |8    |
+        4 | 8    |8    |8    |0.4  |
+        3 | 8    |8    |3.4  |0    |
+        8 | 8    |8    |8    |8    |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate est deterministe
+L'automate est complet
+Automate deja determinise et complet
+Nom : automate/B3-25.txt Deterministe Complet
+Alphabet reconnu : {a, b, c, d}
+Il a 9 etats
+          | a    |b    |c    |d    |
+
+I       1 | 1.2  |3    |4    |0    |
+      1.2 | 1.2  |2.3  |4    |0    |
+      2.3 | 8    |2.3  |3.4  |0    |
+      3.4 | 8    |8    |3.4  |0.4  |
+  T   0.4 | 8    |8    |8    |0.4  |
+  T     0 | 8    |8    |8    |8    |
+        4 | 8    |8    |8    |0.4  |
+        3 | 8    |8    |3.4  |0    |
+        8 | 8    |8    |8    |8    |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Groupe 0
+      Partie: EtatNon-Terminaux
+
+   Etats: 1, 1.2, 2.3, 3.4, 4, 3, 8
+
+   Groupe 1
+      Partie: EtatTerminaux
+
+   Etats: 0.4, 0
+
+             Partition 1
+
+   Groupe 0
+      Partie: (transition vers les groupes de la partition 0)
+         a : Groupe 0
+         b : Groupe 0
+         c : Groupe 0
+         d : Groupe 1
+   Etats: 1, 1.2, 2.3, 3.4, 4, 3
+
+   Groupe 1
+      Partie: (transition vers les groupes de la partition 0)
+         a : Groupe 0
+         b : Groupe 0
+         c : Groupe 0
+         d : Groupe 0
+   Etats: 8
+
+   Groupe 2
+      Partie: (transition vers les groupes de la partition 0)
+         a : Groupe 0
+         b : Groupe 0
+         c : Groupe 0
+         d : Groupe 1
+   Etats: 0.4
+
+   Groupe 3
+      Partie: (transition vers les groupes de la partition 0)
+         a : Groupe 0
+         b : Groupe 0
+         c : Groupe 0
+         d : Groupe 0
+   Etats: 0
+
+             Partition 2
+
+   Groupe 0
+      Partie: (transition vers les groupes de la partition 1)
+         a : Groupe 0
+         b : Groupe 0
+         c : Groupe 0
+         d : Groupe 3
+   Etats: 1, 1.2
+
+   Groupe 1
+      Partie: (transition vers les groupes de la partition 1)
+         a : Groupe 1
+         b : Groupe 0
+         c : Groupe 0
+         d : Groupe 3
+   Etats: 2.3
+
+   Groupe 2
+      Partie: (transition vers les groupes de la partition 1)
+         a : Groupe 1
+         b : Groupe 1
+         c : Groupe 0
+         d : Groupe 2
+   Etats: 3.4
+
+   Groupe 3
+      Partie: (transition vers les groupes de la partition 1)
+         a : Groupe 1
+         b : Groupe 1
+         c : Groupe 1
+         d : Groupe 2
+   Etats: 4
+
+   Groupe 4
+      Partie: (transition vers les groupes de la partition 1)
+         a : Groupe 1
+         b : Groupe 1
+         c : Groupe 0
+         d : Groupe 3
+   Etats: 3
+
+   Groupe 5
+      Partie: (transition vers les groupes de la partition 1)
+         a : Groupe 1
+         b : Groupe 1
+         c : Groupe 1
+         d : Groupe 1
+   Etats: 8
+
+   Groupe 6
+      Partie: (transition vers les groupes de la partition 1)
+         a : Groupe 1
+         b : Groupe 1
+         c : Groupe 1
+         d : Groupe 2
+   Etats: 0.4
+
+   Groupe 7
+      Partie: (transition vers les groupes de la partition 1)
+         a : Groupe 1
+         b : Groupe 1
+         c : Groupe 1
+         d : Groupe 1
+   Etats: 0
+
+             Partition 3
+
+   Groupe 0
+      Partie: (transition vers les groupes de la partition 2)
+         a : Groupe 0
+         b : Groupe 4
+         c : Groupe 3
+         d : Groupe 7
+   Etats: 1
+
+   Groupe 1
+      Partie: (transition vers les groupes de la partition 2)
+         a : Groupe 0
+         b : Groupe 1
+         c : Groupe 3
+         d : Groupe 7
+   Etats: 1.2
+
+   Groupe 2
+      Partie: (transition vers les groupes de la partition 2)
+         a : Groupe 5
+         b : Groupe 1
+         c : Groupe 2
+         d : Groupe 7
+   Etats: 2.3
+
+   Groupe 3
+      Partie: (transition vers les groupes de la partition 2)
+         a : Groupe 5
+         b : Groupe 5
+         c : Groupe 2
+         d : Groupe 6
+   Etats: 3.4
+
+   Groupe 4
+      Partie: (transition vers les groupes de la partition 2)
+         a : Groupe 5
+         b : Groupe 5
+         c : Groupe 5
+         d : Groupe 6
+   Etats: 4
+
+   Groupe 5
+      Partie: (transition vers les groupes de la partition 2)
+         a : Groupe 5
+         b : Groupe 5
+         c : Groupe 2
+         d : Groupe 7
+   Etats: 3
+
+   Groupe 6
+      Partie: (transition vers les groupes de la partition 2)
+         a : Groupe 5
+         b : Groupe 5
+         c : Groupe 5
+         d : Groupe 5
+   Etats: 8
+
+   Groupe 7
+      Partie: (transition vers les groupes de la partition 2)
+         a : Groupe 5
+         b : Groupe 5
+         c : Groupe 5
+         d : Groupe 6
+   Etats: 0.4
+
+   Groupe 8
+      Partie: (transition vers les groupes de la partition 2)
+         a : Groupe 5
+         b : Groupe 5
+         c : Groupe 5
+         d : Groupe 5
+   Etats: 0
+
+         Partition Finale
+
+   Groupe 0
+      Partie: (transition vers les groupes de cette partition)
+         a : Groupe 1
+         b : Groupe 5
+         c : Groupe 4
+         d : Groupe 8
+   Etats: 1
+
+   Groupe 1
+      Partie: (transition vers les groupes de cette partition)
+         a : Groupe 1
+         b : Groupe 2
+         c : Groupe 4
+         d : Groupe 8
+   Etats: 1.2
+
+   Groupe 2
+      Partie: (transition vers les groupes de cette partition)
+         a : Groupe 6
+         b : Groupe 2
+         c : Groupe 3
+         d : Groupe 8
+   Etats: 2.3
+
+   Groupe 3
+      Partie: (transition vers les groupes de cette partition)
+         a : Groupe 6
+         b : Groupe 6
+         c : Groupe 3
+         d : Groupe 7
+   Etats: 3.4
+
+   Groupe 4
+      Partie: (transition vers les groupes de cette partition)
+         a : Groupe 6
+         b : Groupe 6
+         c : Groupe 6
+         d : Groupe 7
+   Etats: 4
+
+   Groupe 5
+      Partie: (transition vers les groupes de cette partition)
+         a : Groupe 6
+         b : Groupe 6
+         c : Groupe 3
+         d : Groupe 8
+   Etats: 3
+
+   Groupe 6
+      Partie: (transition vers les groupes de cette partition)
+         a : Groupe 6
+         b : Groupe 6
+         c : Groupe 6
+         d : Groupe 6
+   Etats: 8
+
+   Groupe 7
+      Partie: (transition vers les groupes de cette partition)
+         a : Groupe 6
+         b : Groupe 6
+         c : Groupe 6
+         d : Groupe 7
+   Etats: 0.4
+
+   Groupe 8
+      Partie: (transition vers les groupes de cette partition)
+         a : Groupe 6
+         b : Groupe 6
+         c : Groupe 6
+         d : Groupe 6
+   Etats: 0L'automate automate/B3-25.txt Deterministe Completest deja minimal
+Nom : automate/B3-25.txt Deterministe Complet Minimal
+Alphabet reconnu : {a, b, c, d}
+Il a 9 etats
+        | a  |b  |c  |d  |
+
+I     0 | 1  |5  |4  |8  |
+      1 | 1  |2  |4  |8  |
+      2 | 6  |2  |3  |8  |
+      3 | 6  |6  |3  |7  |
+      4 | 6  |6  |6  |7  |
+      5 | 6  |6  |3  |8  |
+      6 | 6  |6  |6  |6  |
+  T   7 | 6  |6  |6  |7  |
+  T   8 | 6  |6  |6  |6  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-25.txt Deterministe Complet Minimal Complementaire
+Alphabet reconnu : {a, b, c, d}
+Il a 9 etats
+        | a  |b  |c  |d  |
+
+I T   0 | 1  |5  |4  |8  |
+  T   1 | 1  |2  |4  |8  |
+  T   2 | 6  |2  |3  |8  |
+  T   6 | 6  |6  |6  |6  |
+  T   3 | 6  |6  |3  |7  |
+      7 | 6  |6  |6  |7  |
+      8 | 6  |6  |6  |6  |
+  T   4 | 6  |6  |6  |7  |
+  T   5 | 6  |6  |3  |8  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+L'automate est deja standardise
+Nom : automate/B3-25.txt Deterministe Complet Minimal Complementaire
+Alphabet reconnu : {a, b, c, d}
+Il a 9 etats
+        | a  |b  |c  |d  |
+
+I T   0 | 1  |5  |4  |8  |
+  T   1 | 1  |2  |4  |8  |
+  T   2 | 6  |2  |3  |8  |
+  T   6 | 6  |6  |6  |6  |
+  T   3 | 6  |6  |3  |7  |
+      7 | 6  |6  |6  |7  |
+      8 | 6  |6  |6  |6  |
+  T   4 | 6  |6  |6  |7  |
+  T   5 | 6  |6  |3  |8  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi

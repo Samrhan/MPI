@@ -1,0 +1,150 @@
+Nom : automate/B3-32.txt
+Alphabet reconnu : {a, b, c}
+Il a 22 etats
+            | a      |b      |c      |*      |
+
+I         0 | -      |-      |-      |1,10   |
+          1 | -      |-      |-      |2,6    |
+          2 | -      |-      |-      |3,5    |
+          3 | -      |4      |-      |-      |
+          4 | -      |-      |-      |3,5    |
+          5 | -      |-      |-      |8      |
+          6 | 7      |-      |-      |-      |
+          7 | -      |-      |-      |8      |
+          8 | -      |-      |9      |-      |
+          9 | -      |-      |-      |21     |
+         10 | -      |-      |-      |11,15  |
+         11 | -      |-      |-      |12,14  |
+         12 | 13     |-      |-      |-      |
+         13 | -      |-      |-      |12,14  |
+         14 | -      |-      |-      |17     |
+         15 | -      |16     |-      |-      |
+         16 | -      |-      |-      |17     |
+         17 | -      |-      |-      |18,20  |
+         18 | -      |-      |19     |-      |
+         19 | -      |-      |-      |18,20  |
+         20 | -      |-      |-      |21     |
+  T      21 | -      |-      |-      |-      |
+   - est asynchrone
+   - est non deterministe
+   - est non complet
+   - n'est pas minimal
+   - est non standard
+
+L'automate n'est pas deterministe
+   L'automate n'est pas sychrone
+   Etat 0, meme caractere pour plusieurs transitions
+    - caractere *, vers: 1 10 
+   Etat 1, meme caractere pour plusieurs transitions
+    - caractere *, vers: 2 6 
+   Etat 2, meme caractere pour plusieurs transitions
+    - caractere *, vers: 3 5 
+   Etat 4, meme caractere pour plusieurs transitions
+    - caractere *, vers: 3 5 
+   Etat 10, meme caractere pour plusieurs transitions
+    - caractere *, vers: 11 15 
+   Etat 11, meme caractere pour plusieurs transitions
+    - caractere *, vers: 12 14 
+   Etat 13, meme caractere pour plusieurs transitions
+    - caractere *, vers: 12 14 
+   Etat 17, meme caractere pour plusieurs transitions
+    - caractere *, vers: 18 20 
+   Etat 19, meme caractere pour plusieurs transitions
+    - caractere *, vers: 18 20 
+Determinisation reussi
+L'automate n'est pas complet
+   Transition manquante aux etats: 0 
+Nom : automate/B3-32.txt Deterministe Complet
+Alphabet reconnu : {a, b, c}
+Il a 2 etats
+        | a  |b  |c  |
+
+I     0 | 1  |1  |1  |
+      1 | 1  |1  |1  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+Completion reussi
+Nom : automate/B3-32.txt Deterministe Complet
+Alphabet reconnu : {a, b, c}
+Il a 2 etats
+        | a  |b  |c  |
+
+I     0 | 1  |1  |1  |
+      1 | 1  |1  |1  |
+   - est synchrone
+   - est deterministe
+   - est complet
+   - n'est pas minimal
+   - est non standard
+
+
+
+             Partition 0
+
+   Partie 0
+      Sous-Partie: Etat Non-Terminaux
+
+   Etats: 0, 1
+
+         Partition Finale
+
+   Partie 0
+      Sous-Partie: (transition vers les groupes de cette partition)
+         a : Partie 0
+         b : Partie 0
+         c : Partie 0
+   Etats: 0, 1Nom : automate/B3-32.txt Deterministe Complet Minimal
+Alphabet reconnu : {a, b, c}
+Il a 1 etats
+        | a  |b  |c  |
+
+I     0 | 0  |0  |0  |
+
+Table de correspondance automate/B3-32.txt Deterministe Complet vers automate/B3-32.txt Deterministe Complet Minimal:
+
+ 0:  0 + 1
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Minimisation reussi
+Automate complementaire de sa version minimise.
+Nom : automate/B3-32.txt Deterministe Complet Minimal Complementaire
+Alphabet reconnu : {a, b, c}
+Il a 1 etats
+        | a  |b  |c  |
+
+I T   0 | 0  |0  |0  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est non standard
+
+Complementarisation reussi
+   Etat 0, Transition 'a' vers l'état initial
+   Etat 0, Transition 'b' vers l'état initial
+   Etat 0, Transition 'c' vers l'état initial
+Nom : automate/B3-32.txt Deterministe Complet Minimal Complementaire Standard
+Alphabet reconnu : {a, b, c}
+Il a 2 etats
+        | a  |b  |c  |
+
+  T   0 | 0  |0  |0  |
+I T   2 | 0  |0  |0  |
+
+   - est synchrone
+   - est deterministe
+   - est complet
+   - est minimal
+   - est standard
+
+Standardisation reussi
